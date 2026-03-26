@@ -24,7 +24,11 @@ class Estudiante extends Persona {
     this.curso = curso;
     this.grupo = grupo;
   }
-  registrar() {
+  registrar(curso, grupo) {
+    if(curso && grupo){
+      this.curso = curso
+      this.grupo = grupo
+    }
     console.log(
       `Estudiante ${this.nombre} registrado en el curso ${this.curso} en el grupo ${this.grupo}`,
     );
@@ -32,7 +36,7 @@ class Estudiante extends Persona {
 }
 
 let mario = new Estudiante("Mario", 21, "Masculino", "FSWD", "12B");
-mario.registrar();
+mario.registrar(/* Params */);
 
 // Crear la clase Profesor, que hereda de Persona, e incluye las propiedades asignatura y nivel y el método asignar(), que muestre por pantalla el resultado.
 
@@ -42,7 +46,11 @@ class Profesor extends Persona {
     this.asignatura = asignatura;
     this.nivel = nivel;
   }
-  asignar() {
+  asignar(asignatura, nivel) {
+    if (asignatura && nivel){
+    this.asignatura = asignatura;
+    this.nivel = nivel;
+    }
     console.log(
       `Nombre:${this.nombre}\nEdad:${this.edad}\nGénero:${this.genero}\nAsignatura:${this.asignatura}\nNivel:${this.nivel}`,
     );
@@ -50,6 +58,6 @@ class Profesor extends Persona {
 }
 
 let antonio = new Profesor("Antonio", 24, "Masculino", "FullStack", 2);
-antonio.asignar();
+antonio.asignar(/* Params */);
 
 
